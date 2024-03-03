@@ -136,6 +136,7 @@
                     if (responseData.statuscode===200) {
                         document.cookie = `accessToken=${responseData.data.accessToken}; path=/; secure; HttpOnly`;
                         document.cookie = `refreshToken=${responseData.data.refreshToken}; path=/; secure; HttpOnly`;
+                        
                         // console.log(responseData.userType);
                         // if (responseData.data.userType === "user") {
                         //     window.location.href = "user-profile.html";
