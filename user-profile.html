@@ -159,30 +159,29 @@
 
         const responseData=await response.json();
         console.log(responseData);
-        // if(responseData.status===400 || responseData.status===401){
-        //     console.log(responseData);
-        //     // window.location.href="user-profile-details.html";
-        // }
-        // else if(responseData.ok){
-        //     const userName=document.getElementById("userName").innerText;
-        //     userName=`${responseData.data.details.userName}`;
-        //     const primary_details_overall=document.getElementById("primary-details-overall").innerHTML;
-        //     primary_details_overall=`<p id="primary-details-ingeneral-1"><span class="head-font-2">BLOOD GROUP:</span>${responseData.data.details.bloodGroup}</p>
-        //                 <p id="primary-details-ingeneral-2"><span class="head-font-2">GENDER:</span>${responseData.data.details.gender}</p>
-        //                 <p id="primary-details-ingeneral-3"><span class="head-font-2">Date of Birth:</span> ${responseData.data.details.dob}</p>
-        //                 <p id="primary-details-ingeneral-4"><span class="head-font-2">EMAIL:</span>${responseData.data.details.email}</p>
-        //                 <p id="primary-details-ingeneral-5"><span class="head-font-2">LOCATION:</span>${responseData.data.details.location}</p>
-        //                 <p id="primary-details-ingeneral-6"><span class="head-font-2">LAST DONATION:</span>${responseData.data.lastdonation}</p>`;
+        if(responseData.statuscode===400 || responseData.statuscode===401){
+            window.location.href="user-profile-details.html";
+        }
+        else if(responseData.statuscode===200){
+            const userName=document.getElementById("userName").innerText;
+            userName=`${responseData.data.details.userName}`;
+            const primary_details_overall=document.getElementById("primary-details-overall").innerHTML;
+            primary_details_overall=`<p id="primary-details-ingeneral-1"><span class="head-font-2">BLOOD GROUP:</span>${responseData.data.details.bloodGroup}</p>
+                        <p id="primary-details-ingeneral-2"><span class="head-font-2">GENDER:</span>${responseData.data.details.gender}</p>
+                        <p id="primary-details-ingeneral-3"><span class="head-font-2">Date of Birth:</span> ${responseData.data.details.dob}</p>
+                        <p id="primary-details-ingeneral-4"><span class="head-font-2">EMAIL:</span>${responseData.data.details.email}</p>
+                        <p id="primary-details-ingeneral-5"><span class="head-font-2">LOCATION:</span>${responseData.data.details.location.state},${responseData.data.details.location.country},${responseData.data.details.location.postalCode}</p>
+                        <p id="primary-details-ingeneral-6"><span class="head-font-2">LAST DONATION:</span>${responseData.data.lastdonation}</p>`;
 
-        //     document.getElementById("hello").innerHTML=`Hello There, <span>${responseData.data.details.userName}</span>!`;
-        //     const div_first_action_group=document.getElementById("first-action-group");
+            document.getElementById("hello").innerHTML=`Hello There, <span>${responseData.data.details.userName}</span>!`;
+            const div_first_action_group=document.getElementById("first-action-group");
 
-        //     if(responseData.data.requests.length!==null){
+            if(responseData.data.requests.length!==null){
 
-        //         for(const req in responseData.data.requests){
-        //             if(responseData.data.requestStatus===1){
-        //                 //request id se data leke aao.
-        //                 responseData.data.requests.requestId
+                for(const req in responseData.data.details.requests){
+                    if(req.requestStatus===1){
+                        //request id se data leke aao.
+                         console.log(req.requestId);
         //                 const div_first=document.createElement("div");
         //                 div_first.classList.add("card");
         //                 div_first.classList.add("request-donation");
@@ -193,12 +192,12 @@
         //                 <p><span class="head-font-2">Blood Group Needed:</span>${responseData.data.bloodGroup}</p>
         //                 <p><span class="head-font-2">LOCATION:</span>${responseData.data.location.state}, ${responseData.data.location.country}</p>
         //                 <p><span class="head-font-2">Request Status:</span> Open</p>`;
-        //             }
-        //         }
-        //     }
+                    }
+                }
+            }
 
         //     const donation_div=document.getElementById("donation-div");
-        //     if(responseData.data.donations.length!==null){
+        //     if(responseData.data.details.donations.length!==0){
         //         const div=document.createElement("div");
         //         div.className.add(card);
         //         div.className.add(request-donation);
