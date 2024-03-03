@@ -134,14 +134,16 @@
                     const responseData = await response.json();
                     console.log(responseData);
                     if (responseData.statuscode===200) {
-                        console.log(responseData.userType);
-                        if (responseData.data.userType === "user") {
-                            window.location.href = "user-profile.html";
-                        } else if (responseData.data.userType === "ngo") {
-                            window.location.href = "ngo-profile.html";
-                        } else {
-                            console.log("Unknown User !!!");
-                        }
+                        // console.log(responseData.userType);
+                        // if (responseData.data.userType === "user") {
+                        //     window.location.href = "user-profile.html";
+                        // } else if (responseData.data.userType === "ngo") {
+                        //     window.location.href = "ngo-profile.html";
+                        // } else {
+                        //     console.log("Unknown User !!!");
+                        // }
+
+
                     } else {
                         console.log("Login Failed");
                     }
