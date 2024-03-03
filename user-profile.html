@@ -176,7 +176,7 @@
             document.getElementById("hello").innerHTML=`Hello There, <span>${responseData.data.details.userName}</span>!`;
             const div_first_action_group=document.getElementById("first-action-group");
 
-            if(responseData.data.requests.length!==null){ 
+            if(responseData.data.details.requests.length!==null){ 
 
                 for(const req in responseData.data.details.requests){
                     if(req.requestStatus===1){
