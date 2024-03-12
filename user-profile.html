@@ -147,245 +147,58 @@
       </div>
 
 <script src="js/chatbot-script.js" defer></script>
-<script>
-
-    async function loadData(){
-        const response=await fetch("https://api.bluebeads.shivamkrthakur.in/v1/user/user-profile",{
-            method:"GET",
-            headers: {
-                            "Content-Type": "application/json"
-                        },
-        });
-
-        const responseData=await response.json();
-        console.log(responseData);
-        // if(responseData.statuscode===400 || responseData.statuscode===401){
-        //     window.location.href="user-profile-details.html";
-        // }
-        // else if(responseData.statuscode===200){
-        //     const userName=document.getElementById("userName").innerText;
-        //     userName=`${responseData.data.details.userName}`;
-        //     const primary_details_overall=document.getElementById("primary-details-overall").innerHTML;
-        //     primary_details_overall=`<p id="primary-details-ingeneral-1"><span class="head-font-2">BLOOD GROUP:</span>${responseData.data.details.bloodGroup}</p>
-        //                 <p id="primary-details-ingeneral-2"><span class="head-font-2">GENDER:</span>${responseData.data.details.gender}</p>
-        //                 <p id="primary-details-ingeneral-3"><span class="head-font-2">Date of Birth:</span> ${responseData.data.details.dob}</p>
-        //                 <p id="primary-details-ingeneral-4"><span class="head-font-2">EMAIL:</span>${responseData.data.details.email}</p>
-        //                 <p id="primary-details-ingeneral-5"><span class="head-font-2">LOCATION:</span>${responseData.data.details.location.state},${responseData.data.details.location.country},${responseData.data.details.location.postalCode}</p>
-        //                 <p id="primary-details-ingeneral-6"><span class="head-font-2">LAST DONATION:</span>${responseData.data.lastdonation}</p>`;
-
-        //     document.getElementById("hello").innerHTML=`Hello There, <span>${responseData.data.details.userName}</span>!`;
-        //     const div_first_action_group=document.getElementById("first-action-group");
-
-        //     if(responseData.data.details.requests.length!==null){ 
-
-        //         for(const req in responseData.data.details.requests){
-        //             if(req.requestStatus===1){
-        //                 //request id se data leke aao.
-        //                  console.log(req.requestId);
-        //                 const div_first=document.createElement("div");
-        //                 div_first.classList.add("card");
-        //                 div_first.classList.add("request-donation");
-        //                 div_first.classList.add("primiary-card-info");
-        //                 div_first_action_group.append(div_first)
-        //                 div_first.innerHTML=`<p class="head-font">Current Request</p>
-        //                 <hr>
-        //                 <p><span class="head-font-2">Blood Group Needed:</span>${responseData.data.bloodGroup}</p>
-        //                 <p><span class="head-font-2">LOCATION:</span>${responseData.data.location.state}, ${responseData.data.location.country}</p>
-        //                 <p><span class="head-font-2">Request Status:</span> Open</p>`;
-            //         }
-            //     }
-            // }
-
-        //     const donation_div=document.getElementById("donation-div");
-        //     if(responseData.data.details.donations.length!==0){
-        //         const div=document.createElement("div");
-        //         div.className.add(card);
-        //         div.className.add(request-donation);
-        //         // campId leke camp name with the clickable link
-        //         // camp ka request type
-        //         div.innerHTML=``;
-        //         donation_div.append(div);
-        //     }
-        //     else{
-        //         const div=document.createElement("div");
-        //         div.className.add(card);
-        //         div.className.add(request-donation);
-        //         div.innerHTML=`<p class="head-font">Donations Done</p>
-        //                 <hr>
-        //                 <p >Make your first donation. 1 donation = 4 life.</p>
-        //                 <img class="public-welfare-images" src="images/donate-it.jpg" alt="No Data Found" height="200px" >
-        //                 <button class="button-1 btn-or" onclick="location.href = 'find_ngo.html';">Donate</button>`;
-        //         donation_div.append(div);
-        //     }
-        //     if(responseData.data.volunteerExperience.length!==null){
-        //         const div=document.createElement("div");
-        //         div.className.add(card);
-        //         div.className.add(request-donation);
-        //         // campId leke camp name with the clickable link
-        //         // camp ka request type
-        //         div.innerHTML=``;
-        //         donation_div.append(div);
-        //     }
-        //     else{
-        //         const div=document.createElement("div");
-        //         div.className.add(card);
-        //         div.className.add(request-donation);
-        //         div.innerHTML=` <p class="head-font">Volunteer Experience</p>
-        //                 <hr>
-        //                 <p >Be a volunteer for the donation camp. Find nearby camps.</p>
-        //                 <center>
-        //                     <img class="public-welfare-images" src="images/find-for-volunteer.jpg" alt="No Data Found" height="200px" width="360px">
-        //                 </center>
-
-        //                 <button class="button-1 btn-or" onclick="location.href = 'find_ngo.html';">Find</button>`;
-        //         donation_div.append(div);
-        //     }
-        
-        // }
-        // else{
-        //     window.location.href="login.html"
-        // }
-            
-    }
-
-    
-
-    async function getBloodBank(){
-        const responseBloodbank=await fetch("",{
-            method:"GET"
-        });
-
-        const responseBloodbankData=await responseBloodbank.json();
-        const blood_banks_div=document.getElementById("blood-banks-div");
-        if(responseBloodbankData){
-            const div=document.createElement("div");
-            div.className.add(card);
-            div.className.add(request-donation);
-            div.innerHTML=` <!-- Blood Banks in User's State -->
-                    <p><span class="head-font-2">NAME:</span>Athma Blood Centre (ABC) - Blood Bank</p>
-                    <p><span class="head-font-2">LOCATION:</span> Chennai, Tamil Nadu, INDIA 600044</p>
-                    <p><span class="head-font-2">CONTACT:</span> 095661 54918</p>`;
-        }
-    }
-
-    async function getCampInfo(){
-        const responseCamp=await fetch("",{
-            method:"GET"
-        });
-
-        const responseCampData=await responseCamp.json();
-
-        const camps_div=document.getElementById("camps-div");
-        if(responseCampData){
-            const div=document.createElement("div");
-            div.className.add(card);
-            div.className.add(request-donation);
-            div.innerHTML=`<!-- camps in user area -->
-                        <p><span class="head-font-2">Camp NAME:</span>Athma Blood Centre (ABC) - Blood Bank</p>
-                        <p><span class="head-font-2">NGO:</span>Athma Blood Centre (ABC) - Blood Bank  </p>
-                        <p><span class="head-font-2">Description:</span>We ensure adequate supply of safe and quality blood / blood products such as - Whole Blood - Packed Red Cells Concentrate (PRBC) - Fresh Frozen Plasma (FFP) - Cryoprecipitate ( Cryo) - Platelet Concentrate (RDP) - Single Donor Platelet (SDP) - Leuco depleted Platelet - Leuco depleted Red Cells - Irradiated processing charges - Red Cells in SAGM to all needy patients at all times, by motivating volunteers to donate blood, and organizing, conducting voluntary blood donation camps in nearby areas.</p>
-                        <p><span class="head-font-2">LOCATION:</span> Chennai, Tamil Nadu, INDIA 600044</p>`;
-        }
-    }
-    loadData();
-    getBloodBank();
-    getCampInfo();
-    
-
-}   
-// {
-//     "success": false,
-//     "message": "User details are incomplete."
-// }
-// {
-//     "message": "User details retrieved successfully",
-//     "data": {
-//         "details": {
-//             "_id": "65d258797c2a9af0f3e89996",
-//             "userName": "John Doe",
-//             "bloodGroup": "O+",
-//             "gender": "male",
-//             "dob": "1990-01-01T00:00:00.000Z",
-//             "email": "john@example.com",
-//             "location": {
-//                 "type": "Point",
-//                 "coordinates": [],
-//                 "country": "United States",
-//                 "state": "New York",
-//                 "postalCode": "10000",
-//                 "_id": "65d258797c2a9af0f3e89997"
-//             },
-//             "lastdonation": "2023-12-25T00:00:00.000Z",
-//             "donations": [],
-//             "volunteerExperience": [],
-//             "requests": [],
-//             "readyToDonate": [],
-//             "createdAt": "2024-02-18T19:20:25.456Z",
-//             "updatedAt": "2024-02-18T19:20:25.456Z",
-//             "__v": 0
-//         }
-//     },
-//     "statuscode": 200,
-//     "success": true
-// }
-
-//     {
-//     "userName": "John Doe",
-//     "bloodGroup": "A+",
-//     "gender": "male",
-//     "dob": "1980-01-01",
-//     "email": "john@example.com",
-//     "location": {
-//         "type": "Point",
-//         "coordinates": [40.7128, -74.0060],
-//         "country": "USA",
-//         "state": "New York",
-//         "postalCode": "10001"
-//     },
-//     "donations": [
-//         {
-//             "campId": "615a7f4f5a6f91a8e236b20f",
-//             "requestStatus": 1
-//         },
-//         {
-//             "campId": "615a7f4f5a6f91a8e236b210",
-//             "requestStatus": 0
-//         }
-//     ],
-//     "volunteerExperience": [
-//         {
-//             "campId": "615a7f4f5a6f91a8e236b211",
-//             "requestStatus": 1
-//         },
-//         {
-//             "campId": "615a7f4f5a6f91a8e236b212",
-//             "requestStatus": 2
-//         }
-//     ],
-//     "requests": [
-//         {
-//             "requestId": "615a7f4f5a6f91a8e236b213",
-//             "requestStatus": 1
-//         },
-//         {
-//             "requestId": "615a7f4f5a6f91a8e236b214",
-//             "requestStatus": 0
-//         }
-//     ],
-//     "readyToDonate": [
-//         {
-//             "user_id": "615a7f4f5a6f91a8e236b215",
-//             "bloodGroup": "A+"
-//         },
-//         {
-//             "user_id": "615a7f4f5a6f91a8e236b216",
-//             "bloodGroup": "O-"
-//         }
-//     ],
-//     "lastdonation": "2023-09-30T00:00:00.000Z"
-// }
-
-</script>
+<script src="js/user-profile.js"></script>
 </body>
 </html>
 
+<!-- 
+{
+    "message": "User details retrieved successfully",
+    "data": {
+        "details": {
+            "_id": "65d258797c2a9af0f3e89996",
+            "userName": "John Doe",
+            "bloodGroup": "O+",
+            "gender": "male",
+            "dob": "1990-01-01T00:00:00.000Z",
+            "email": "john@example.com",
+            "location": {
+                "type": "Point",
+                "coordinates": [],
+                "country": "United States",
+                "state": "New York",
+                "postalCode": "10000",
+                "_id": "65d258797c2a9af0f3e89997"
+            },
+            "lastdonation": "2023-12-25T00:00:00.000Z",
+            "donations": [
+                {
+                    "campId": "65d2709544488101701d2f93",
+                    "requestStatus": 1,
+                    "_id": "65d27932b546b626a5721d71"
+                }
+            ],
+            "volunteerExperience": [
+                {
+                    "campId": "65d2709544488101701d2f93",
+                    "requestStatus": 1,
+                    "_id": "65d27910b546b626a5721d67"
+                }
+            ],
+            "requests": [
+                {
+                    "requestId": "65d26cb675a85846d96ba76a",
+                    "requestStatus": 1,
+                    "_id": "65d26cb775a85846d96ba76d"
+                }
+            ],
+            "readyToDonate": [],
+            "createdAt": "2024-02-18T19:20:25.456Z",
+            "updatedAt": "2024-02-19T04:40:05.131Z",
+            "__v": 3
+        }
+    },
+    "statuscode": 200,
+    "success": true
+}
+ -->
