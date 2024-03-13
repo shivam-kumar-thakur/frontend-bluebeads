@@ -65,6 +65,7 @@ async function loadBasisInfo(){
         })
 
         const responseData=await response.json();
+        console.log(responseData);
 
         if(responseData.statuscode===400 || responseData.statuscode===401){
             window.location.href="user-profile-details.html";
