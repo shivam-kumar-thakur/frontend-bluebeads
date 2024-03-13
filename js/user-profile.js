@@ -5,66 +5,66 @@ document.addEventListener("DOMContentLoaded",async function (){
 })
 
 async function loadBasisInfo(){
-    const responseData={
-        "message": "User details retrieved successfully",
-        "data": {
-            "details": {
-                "_id": "65d258797c2a9af0f3e89996",
-                "userName": "John Doe",
-                "bloodGroup": "O+",
-                "gender": "male",
-                "dob": "1990-01-01T00:00:00.000Z",
-                "email": "john@example.com",
-                "location": {
-                    "type": "Point",
-                    "coordinates": [],
-                    "country": "United States",
-                    "state": "New York",
-                    "postalCode": "10000",
-                    "_id": "65d258797c2a9af0f3e89997"
-                },
-                "lastdonation": "2023-12-25T00:00:00.000Z",
-                "donations": [
-                    // {
-                    //     "campId": "65d2709544488101701d2f93",
-                    //     "requestStatus": 1,
-                    //     "_id": "65d27932b546b626a5721d71"
-                    // }
-                ],
-                "volunteerExperience": [
-                    // {
-                    //     "campId": "65d2709544488101701d2f93",
-                    //     "requestStatus": 1,
-                    //     "_id": "65d27910b546b626a5721d67"
-                    // }
-                ],
-                "requests": [
-                    {
-                        "requestId": "65d26cb675a85846d96ba76a",
-                        "requestStatus": 1,
-                        "_id": "65d26cb775a85846d96ba76d"
-                    }
-                ],
-                "readyToDonate": [],
-                "createdAt": "2024-02-18T19:20:25.456Z",
-                "updatedAt": "2024-02-19T04:40:05.131Z",
-                "__v": 3
-            }
-        },
-        "statuscode": 200,
-        "success": true
-    };
+    // const responseData={
+    //     "message": "User details retrieved successfully",
+    //     "data": {
+    //         "details": {
+    //             "_id": "65d258797c2a9af0f3e89996",
+    //             "userName": "John Doe",
+    //             "bloodGroup": "O+",
+    //             "gender": "male",
+    //             "dob": "1990-01-01T00:00:00.000Z",
+    //             "email": "john@example.com",
+    //             "location": {
+    //                 "type": "Point",
+    //                 "coordinates": [],
+    //                 "country": "United States",
+    //                 "state": "New York",
+    //                 "postalCode": "10000",
+    //                 "_id": "65d258797c2a9af0f3e89997"
+    //             },
+    //             "lastdonation": "2023-12-25T00:00:00.000Z",
+    //             "donations": [
+    //                 // {
+    //                 //     "campId": "65d2709544488101701d2f93",
+    //                 //     "requestStatus": 1,
+    //                 //     "_id": "65d27932b546b626a5721d71"
+    //                 // }
+    //             ],
+    //             "volunteerExperience": [
+    //                 // {
+    //                 //     "campId": "65d2709544488101701d2f93",
+    //                 //     "requestStatus": 1,
+    //                 //     "_id": "65d27910b546b626a5721d67"
+    //                 // }
+    //             ],
+    //             "requests": [
+    //                 {
+    //                     "requestId": "65d26cb675a85846d96ba76a",
+    //                     "requestStatus": 1,
+    //                     "_id": "65d26cb775a85846d96ba76d"
+    //                 }
+    //             ],
+    //             "readyToDonate": [],
+    //             "createdAt": "2024-02-18T19:20:25.456Z",
+    //             "updatedAt": "2024-02-19T04:40:05.131Z",
+    //             "__v": 3
+    //         }
+    //     },
+    //     "statuscode": 200,
+    //     "success": true
+    // };
     
     try{
 
-        // const response=await fetch("",{
-        //     method:"GET",
-        //     headers:{
-        //         "Content-Tpye":"application/json"
-        //     }
-        // })
+        const response=await fetch("",{
+            method:"GET",
+            headers:{
+                "Content-Tpye":"application/json"
+            }
+        })
 
-        // const responseData=await response.json();
+        const responseData=await response.json();
 
         if(responseData.statuscode===400 || responseData.statuscode===401){
             window.location.href="user-profile-details.html";
