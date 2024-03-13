@@ -56,8 +56,7 @@ async function loadBasisInfo(){
     // };
     
     try{
-
-        const response=await fetch("",{
+        const response=await fetch("https://api.bluebeads.shivamkrthakur.in/v1/user/user-profile",{
             method:"GET",
             headers:{
                 "Content-Tpye":"application/json"
