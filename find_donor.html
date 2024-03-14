@@ -28,6 +28,11 @@
  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,1,0" />
+ <style>
+    #popup{
+        display: none;
+    }
+ </style>
 </head>
 <body>
 <!-- !NAV BAR -->
@@ -118,7 +123,7 @@
                 <button class="button-2" type="button" id="others-request-btn">Request</button></a>
             </form>
         </div>
-        <div class="popup" id="popup" style="display: none">
+        <div class="popup" id="popup">
             <div class="card popup-container">
                 <img class="popup-img" src="images/ai-finding.jpg">
                 <h1 class="popup-h1">A.I. is on work to find donor for you.<br> We will notify you.</h1>
@@ -205,8 +210,6 @@
     })
 
     function popup() {
-        let popup = document.getElementById("popup");
-        popup.style.display = "none";
         let request_btn = document.getElementById("self-request-btn");
         request_btn.addEventListener("click", (e) => {
             popup.style.display = "flex";
