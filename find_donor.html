@@ -159,6 +159,12 @@
             headers: {
                 "Content-Type": "application/json"
             },
+            body:JSON.stringify({
+                location:{
+                    latitude:0,
+                    longitude:0
+                }
+            })
         });
 
         const responseData = await response.json(); // Await for JSON parsing
