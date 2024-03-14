@@ -169,9 +169,8 @@
 
         const responseData = await response.json(); // Await for JSON parsing
 
-        if (responseData.ok) {
+        if (responseData.statuscode===201) {
             popup();
-            window.location.href = "user-profile.html";
         }
     })
 
@@ -200,9 +199,8 @@
 
         const responseData = await response.json(); // Await for JSON parsing
 
-        if (responseData.ok) {
+        if (responseData.statuscode===201) {
             popup();
-            window.location.href = "user-profile.html";
         }
     })
 
