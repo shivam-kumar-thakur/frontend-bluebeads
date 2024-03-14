@@ -159,11 +159,11 @@
             headers: {
                 "Content-Type": "application/json"
             },
-            body:JSON.stringify({
-                location:{
-                    latitude:0,
-                    longitude:0
+            body:JSON.stringify({location: {
+                  "latitude": 51.5074,
+                  "longitude": -0.1278
                 }
+
             })
         });
 
@@ -191,8 +191,9 @@
             },
             body:JSON.stringify({
                 bloodGroup:selectedItem,
-                location:{
-                    latitude:0, longitude:0
+                location: {
+                  "latitude": 51.5074,
+                  "longitude": -0.1278
                 }
             })
         });
