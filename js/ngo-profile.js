@@ -3,55 +3,62 @@ document.addEventListener("DOMContentLoaded",async function (){
 })
 
 async function loadbasicInfo(){
-    const responseData={
-        "message": "NGO details retrieved successfully",
-        "data": {
-            "details": {
-                "location": {
-                    "coordinates": [
-                        40.7128,
-                        -74.006
-                    ],
-                    "country": "United States",
-                    "state": "New York",
-                    "postalCode": "10000",
-                    "type": "Point"
-                },
-                "_id": "65d252a9f7c01b65cd7043be",
-                "ngo_name": "ngo1",
-                "ngo_description": "trail ngo",
-                "camps": [],
-                "ngoHeadName": "John Doe",
-                "ngoHeadContact": "+91123456789",
-                "ngoHeadEmail": "john@example.com",
-                "ngoHeadGender": "male",
-                "createdAt": "2024-02-18T18:55:37.650Z",
-                "updatedAt": "2024-02-18T18:55:37.650Z",
-                "__v": 0
-            },
-            "overallData": {
-                "totalcamp": 0,
-                "totalVoulntersRegister": 0,
-                "totalDonorsRegister": 0,
-                "totalPersonsDonated": 0,
-                "bloodGroups": {
-                    "A+": 10,
-                    "A-": 0,
-                    "B+": 20,
-                    "B-": 45,
-                    "AB+": 45,
-                    "AB-": 0,
-                    "O+": 23,
-                    "O-": 45
-                }
-            }
-        },
-        "statuscode": 200,
-        "success": true
-    };    
+    // const responseData={
+    //     "message": "NGO details retrieved successfully",
+    //     "data": {
+    //         "details": {
+    //             "location": {
+    //                 "coordinates": [
+    //                     40.7128,
+    //                     -74.006
+    //                 ],
+    //                 "country": "United States",
+    //                 "state": "New York",
+    //                 "postalCode": "10000",
+    //                 "type": "Point"
+    //             },
+    //             "_id": "65d252a9f7c01b65cd7043be",
+    //             "ngo_name": "ngo1",
+    //             "ngo_description": "trail ngo",
+    //             "camps": [],
+    //             "ngoHeadName": "John Doe",
+    //             "ngoHeadContact": "+91123456789",
+    //             "ngoHeadEmail": "john@example.com",
+    //             "ngoHeadGender": "male",
+    //             "createdAt": "2024-02-18T18:55:37.650Z",
+    //             "updatedAt": "2024-02-18T18:55:37.650Z",
+    //             "__v": 0
+    //         },
+    //         "overallData": {
+    //             "totalcamp": 0,
+    //             "totalVoulntersRegister": 0,
+    //             "totalDonorsRegister": 0,
+    //             "totalPersonsDonated": 0,
+    //             "bloodGroups": {
+    //                 "A+": 10,
+    //                 "A-": 0,
+    //                 "B+": 20,
+    //                 "B-": 45,
+    //                 "AB+": 45,
+    //                 "AB-": 0,
+    //                 "O+": 23,
+    //                 "O-": 45
+    //             }
+    //         }
+    //     },
+    //     "statuscode": 200,
+    //     "success": true
+    // };    
     try{
-        // const response=await fetch();
-        // const responseData=await response.json();
+        const response=await fetch("https://api.bluebeads.shivamkrthakur.in/v1/ngo/ngo-profile",{
+            method:"GET",
+            headers:{
+                "Content-Tpye":"application/json"
+            }
+        })
+
+        const responseData=await response.json();
+        console.log(responseData);
 
         if(responseData.statuscode===400 || responseData.statuscode===401){
             window.location.href="ngo-profile-details.html";
