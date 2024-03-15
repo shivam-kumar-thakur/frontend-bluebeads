@@ -39,6 +39,7 @@ document.getElementById("submit-btn").addEventListener("click", async (event) =>
             window.location.href = "user-profile"; // Redirect to user profile page
         } else {
             console.error("Failed to submit data");
+            console.log(response);
             // Handle error scenario
         }
     } catch (error) {
