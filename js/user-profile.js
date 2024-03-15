@@ -133,6 +133,7 @@ async function loadRequestData(responseData){
             })
 
             const responseData=await response.json();
+            const userDetails = responseData.data.details;
             console.log(responseData);
             // add all this things.
             currentRequest.innerHTML=`<p class="head-font">Current Request</p>
@@ -140,8 +141,8 @@ async function loadRequestData(responseData){
             <!-- <p>No requests.</p> -->
             <!-- Request Details -->
 
-            <p><span class="head-font-2">Blood Group Needed:</span>O+</p>
-            <p><span class="head-font-2">LOCATION:</span> Chennai, Tamil Nadu, INDIA 600127</p>
+            <p><span class="head-font-2">Blood Group Needed:</span>${userDetails.bloodGroup}</p>
+            <p><span class="head-font-2">LOCATION:</span>${userDetails.location.state}, ${userDetails.location.country}, ${userDetails.location.postalCode}</p>
             <p><span class="head-font-2">Request Status:</span> Open</p>
              `;
             first_action_group.append(currentRequest);
