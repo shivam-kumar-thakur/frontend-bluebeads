@@ -8,7 +8,7 @@ document.getElementById("submit-btn").addEventListener("click", async (event) =>
         const location = document.getElementById("location").value;
         const dob = document.getElementById("dob").value;
         const email = document.getElementById("email").value;
-        
+
         // Construct the data object
         const data = {
             userName: name,
@@ -20,7 +20,7 @@ document.getElementById("submit-btn").addEventListener("click", async (event) =>
             },
             dob,
             email,
-            last_donation_date: "" // You may add last donation date if available, otherwise leave it empty
+            last_donation_date: formattedCurrentDate // Set last_donation_date to the current date
         };
 
         // Make POST request to the API endpoint
