@@ -122,9 +122,18 @@ async function loadRequestData(responseData){
         const currentRequest=document.createElement("div");
         currentRequest.classList.add("card", "request-donation", "primiary-card-info");
         try{
-            // const responseRequest=await fetch();
-            // const responseRequestData=await responseRequest.json();
+            const response=await fetch("https://api.bluebeads.shivamkrthakur.in/v1/ngo/ngo-profile",{
+                method:"GET",
+                headers:{
+                    "Content-Tpye":"application/json"
+                },
+                body:JSON.stringify({
+                    requestId:responseData.data.details.requests[i]
+                })
+            })
 
+            const responseData=await response.json();
+            console.log(responseData);
             // add all this things.
             currentRequest.innerHTML=`<p class="head-font">Current Request</p>
             <hr>
