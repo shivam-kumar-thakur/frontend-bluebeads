@@ -177,7 +177,7 @@
         if (responseData.statuscode===201) {
             popup();
         }
-    });
+    })
 
 
     document.getElementById("others-request-btn").addEventListener("click", async () => {
@@ -188,27 +188,27 @@
                 selectedItem=selectItem.options[i].value;
             }
         }
-
+        console.log(selectedItem);
         const response = await fetch("https://api.bluebeads.shivamkrthakur.in/v1/user/request-others", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
             body:JSON.stringify({
-                "bloodGroup":"AB-",
-                "location": {
+                bloodGroup:selectedItem,
+                location: {
                   "latitude": 51.5074,
                   "longitude": -0.1278
                 }
             })
         });
+
         const responseData = await response.json(); // Await for JSON parsing
-        console.log(responseData);
-        
-        if (responseData.statuscode===201) {
+        console.log(responseData)
+        if (responseData.ok) {
             popup();
         }
-    });
+    })
 
     function popup() {
         let popup = document.getElementById("popup");
