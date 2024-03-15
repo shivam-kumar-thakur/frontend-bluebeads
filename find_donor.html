@@ -195,13 +195,14 @@
                 "Content-Type": "application/json"
             },
             body:JSON.stringify({
-    "bloodGroup":"AB-",
-    "location": {
-      "latitude": 51.5074,
-      "longitude": -0.1278
-    }
-})
+                "bloodGroup":"AB-",
+                "location": {
+                  "latitude": 51.5074,
+                  "longitude": -0.1278
+                }
+            })
         });
+        console(response);
 
         const responseData = await response.json(); // Await for JSON parsing
 
