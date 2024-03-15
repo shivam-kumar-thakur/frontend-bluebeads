@@ -30,7 +30,8 @@ document.getElementById("submit-btn").addEventListener("submit", async (event) =
             body: JSON.stringify(data)
         });
         // Handle response
-        if (response.ok) {
+        const responseData=await response.json();
+        if (responseData.ok) {
             window.location.href="user-profile";
         } else {
             console.error("Failed to submit data");
