@@ -8,7 +8,11 @@ document.getElementById("submit-btn").addEventListener("click", async (event) =>
         const location = document.getElementById("location").value;
         const dob = document.getElementById("dob").value;
         const email = document.getElementById("email").value;
-
+            
+                // Convert dob to a valid date format
+        const dobDate = new Date(dob);
+        const formattedDob = dobDate.toISOString().substring(0, 10); // Format dob as YYYY-MM-DD
+            
         // Construct the data object
         const data = {
             userName: name,
@@ -20,8 +24,9 @@ document.getElementById("submit-btn").addEventListener("click", async (event) =>
             },
             dob,
             email,
-            last_donation_date:dob // Set last_donation_date to the current date
+            last_donation_date: formattedDob // Set last_donation_date to the formatted dob
         };
+
 
         // Make POST request to the API endpoint
         const response = await fetch("https://api.bluebeads.shivamkrthakur.in/v1/user/user-details", {
