@@ -20,7 +20,7 @@ document.getElementById("submit-btn").addEventListener("click", async (event) =>
             },
             dob,
             email,
-            last_donation_date: formattedCurrentDate // Set last_donation_date to the current date
+            last_donation_date:Date.now() // Set last_donation_date to the current date
         };
 
         // Make POST request to the API endpoint
