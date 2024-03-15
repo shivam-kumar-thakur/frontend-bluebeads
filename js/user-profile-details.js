@@ -31,6 +31,7 @@ document.getElementById("submit-btn").addEventListener("submit", async (event) =
         });
         // Handle response
         const responseData=await response.json();
+        console.log(responseData);
         if (responseData.ok) {
             window.location.href="user-profile";
         } else {
