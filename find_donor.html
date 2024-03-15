@@ -203,7 +203,7 @@
             })
         });
         const responseData = await response.json(); // Await for JSON parsing
-
+        console.log(responseData);
         if (responseData.status===201) {
             popup();
         }
