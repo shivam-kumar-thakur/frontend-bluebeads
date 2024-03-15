@@ -177,7 +177,7 @@
         if (responseData.statuscode===201) {
             popup();
         }
-    })
+    });
 
 
     document.getElementById("others-request-btn").addEventListener("click", async () => {
@@ -204,10 +204,11 @@
         });
         const responseData = await response.json(); // Await for JSON parsing
         console.log(responseData);
-        if (responseData.success===true) {
+        
+        if (responseData.statuscode===201) {
             popup();
         }
-    })
+    });
 
     function popup() {
         let popup = document.getElementById("popup");
