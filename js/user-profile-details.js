@@ -1,5 +1,5 @@
 
-document.getElementById("submit-btn").addEventListener("submit", async (event) => {
+document.getElementById("submit-btn").addEventListener("click", async (event) => {
     
     const name = document.getElementById("name").value;
     const bloodGroup = document.getElementById("blood").value;
