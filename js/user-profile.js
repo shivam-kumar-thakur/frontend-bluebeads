@@ -67,7 +67,8 @@ async function loadBasisInfo(){
         console.log(responseData);
 
         if(responseData.statuscode===400 || responseData.statuscode===401){
-            window.location.href="user-profile-details.html";
+            // window.location.href="user-profile-details.html";
+            console.log(responseData);
        }
 
        else if(responseData.statuscode===200){
