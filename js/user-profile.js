@@ -66,9 +66,8 @@ async function loadBasisInfo(){
         const responseData=await response.json();
         console.log(responseData);
 
-        if(responseData.statuscode===400 || responseData.statuscode===401){
-            // window.location.href="user-profile-details.html";
-            console.log(responseData);
+        if(responseData.success===false && responseData.message==="User details are incomplete."){
+            window.location.href="user-profile-details.html";
        }
 
        else if(responseData.statuscode===200){
@@ -98,7 +97,7 @@ async function loadBasisInfo(){
 
        else{
         console.log(responseData);
-        // window.location.href="login.html";
+        window.location.href="login.html";
        }
 
     } catch(error){
