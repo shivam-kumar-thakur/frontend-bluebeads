@@ -122,7 +122,7 @@ async function loadRequestData(responseData){
         const currentRequest=document.createElement("div");
         currentRequest.classList.add("card", "request-donation", "primiary-card-info");
         try{
-            const response=await fetch("https://api.bluebeads.shivamkrthakur.in/v1/ngo/ngo-profile",{
+            const response2=await fetch("https://api.bluebeads.shivamkrthakur.in/v1/ngo/ngo-profile",{
                 method:"GET",
                 headers:{
                     "Content-Tpye":"application/json"
@@ -132,17 +132,17 @@ async function loadRequestData(responseData){
                 })
             })
 
-            const responseData=await response.json();
-            const userDetails = responseData.data.details;
-            console.log(responseData);
+            const responseData2=await response2.json();
+            const userDetails2 = responseData2.data.details;
+            console.log(responseData2);
             // add all this things.
             currentRequest.innerHTML=`<p class="head-font">Current Request</p>
             <hr>
             <!-- <p>No requests.</p> -->
             <!-- Request Details -->
 
-            <p><span class="head-font-2">Blood Group Needed:</span>${userDetails.bloodGroup}</p>
-            <p><span class="head-font-2">LOCATION:</span>${userDetails.location.state}, ${userDetails.location.country}, ${userDetails.location.postalCode}</p>
+            <p><span class="head-font-2">Blood Group Needed:</span>${userDetails2.bloodGroup}</p>
+            <p><span class="head-font-2">LOCATION:</span>${userDetails.location2.state}, ${userDetails2.location.country}, ${userDetails2.location.postalCode}</p>
             <p><span class="head-font-2">Request Status:</span> Open</p>
              `;
             first_action_group.append(currentRequest);
