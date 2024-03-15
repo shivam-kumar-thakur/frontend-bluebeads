@@ -97,7 +97,8 @@ async function loadBasisInfo(){
        }
 
        else{
-        window.location.href="login.html";
+        console.log(responseData);
+        // window.location.href="login.html";
        }
 
     } catch(error){
