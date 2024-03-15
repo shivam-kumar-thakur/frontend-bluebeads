@@ -16,7 +16,7 @@ document.getElementById("submit-btn").addEventListener("submit", async (event) =
             latitude: 51.5074, // Replace with actual latitude
             longitude: -0.1278 // Replace with actual longitude
         },
-        // dob,
+        dob,
         email,
         last_donation_date: "" // You may add last donation date if available, otherwise leave it empty
     };
