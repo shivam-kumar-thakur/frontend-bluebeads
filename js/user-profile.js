@@ -127,15 +127,16 @@ async function loadRequestData(responseData){
             console.log(responseData.data.details);
             console.log(responseData.data.details.requests[i]);
 
-            const response2=await fetch("https://api.bluebeads.shivamkrthakur.in/v1/user/request-status",{
-                method:"POST",
-                headers:{
-                    "Content-Tpye":"application/json"
+            const response2 = await fetch("https://api.bluebeads.shivamkrthakur.in/v1/user/request-status", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
                 },
-                body:JSON.stringify({
-                    requestId:stringify(responseData.data.details.requests[i].requestId)
+                body: JSON.stringify({
+                    requestId: responseData.data.details.requests[i].requestId
                 })
             });
+
 
 //             const response2 = await fetch("https://api.bluebeads.shivamkrthakur.in/v1/user/request-status", {
 //     method: "POST", // This should be changed to "GET" or "HEAD"
