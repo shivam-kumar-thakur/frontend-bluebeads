@@ -133,7 +133,7 @@ async function loadRequestData(responseData){
                     "Content-Tpye":"application/json"
                 },
                 body:JSON.stringify({
-                    requestId:responseData.data.details.requests[i]
+                    requestId:responseData.data.details.requests[i].requestId
                 })
             });
 
