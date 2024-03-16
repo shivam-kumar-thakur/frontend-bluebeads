@@ -24,7 +24,7 @@ document.getElementById("submit-btn").addEventListener("click", async (event) =>
             },
             dob,
             email,
-            last_donation_date: formattedDob // Set last_donation_date to the formatted dob
+            last_donation_date: Date.now() // Set last_donation_date to the formatted dob
         };
 
 
@@ -38,8 +38,9 @@ document.getElementById("submit-btn").addEventListener("click", async (event) =>
         });
 
         // Handle response
-        if (response.ok) {
-            const responseData = await response.json();
+        const responseData = await response.json();
+
+        if (responseData.statuscode===201) {
             console.log(responseData);
             window.location.href = "user-profile"; // Redirect to user profile page
         } else {
