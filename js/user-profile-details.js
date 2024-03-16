@@ -1,7 +1,5 @@
 document.getElementById("submit-btn").addEventListener("click", async (event) => {
     try {
-        event.preventDefault(); // Prevent form submission
-        
         const name = document.getElementById("name").value;
         const bloodGroup = document.getElementById("blood").value;
         const gender = document.querySelector('input[name="gender"]:checked').value;
