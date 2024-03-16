@@ -146,7 +146,7 @@ async function loadRequestData(responseData){
             <!-- Request Details -->
 
             <p><span class="head-font-2">Blood Group Needed:</span>${userDetails2.bloodGroup}</p>
-            <p><span class="head-font-2">LOCATION:</span>${userDetails2.location2.state}, ${userDetails2.location.country}, ${userDetails2.location.postalCode}</p>
+            <p><span class="head-font-2">LOCATION:</span>${userDetails2.location.state}, ${userDetails2.location.country}, ${userDetails2.location.postalCode}</p>
             <p><span class="head-font-2">Request Status:</span> Open</p>
              `;
             first_action_group.append(currentRequest);
