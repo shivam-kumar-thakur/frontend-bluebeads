@@ -41,7 +41,7 @@ document.getElementById("submit-btn").addEventListener("click", async (event) =>
         console.log("Response Data:", responseData);
         if (responseData.statuscode === 201) {
             console.log("Data submitted successfully");
-            window.location.href = "user-profile"; // Redirect to user profile page
+            window.location.href = "user-profile.html"; // Redirect to user profile page
         } else {
             console.error("Failed to submit data",responseData);
             // Handle error scenario
