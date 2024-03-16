@@ -123,6 +123,10 @@ async function loadRequestData(responseData){
         const currentRequest=document.createElement("div");
         currentRequest.classList.add("card", "request-donation", "primiary-card-info");
         try{
+            console.log(responseData.data);
+            console.log(responseData.data.details);
+            console.log(responseData.data.details.requests[i]);
+
             const response2=await fetch("https://api.bluebeads.shivamkrthakur.in/v1/user/request-status",{
                 method:"POST",
                 headers:{
