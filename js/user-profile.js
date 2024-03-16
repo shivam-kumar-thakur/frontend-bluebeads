@@ -90,8 +90,8 @@ async function loadBasisInfo(){
             primaryDetailsOverall.innerHTML = userDetailsHTML;
 
             // load other data
-            loadRequestData(responseData);
-            loadPrimaryInfo(responseData);
+            await loadRequestData(responseData);
+            await loadPrimaryInfo(responseData);
 
        }
 
