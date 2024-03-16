@@ -1,16 +1,18 @@
 document.getElementById("submit-btn").addEventListener("click", async (event) => {
     try {
+        event.preventDefault(); // Prevent form submission
+
         const name = document.getElementById("name").value;
         const bloodGroup = document.getElementById("blood").value;
         const gender = document.querySelector('input[name="gender"]:checked').value;
         const location = document.getElementById("location").value;
         const dob = document.getElementById("dob").value;
         const email = document.getElementById("email").value;
-            
-                // Convert dob to a valid date format
+
+        // Convert dob to a valid date format
         const dobDate = new Date(dob);
         const formattedDob = dobDate.toISOString().substring(0, 10); // Format dob as YYYY-MM-DD
-            
+
         // Construct the data object
         const data = {
             userName: name,
@@ -22,9 +24,8 @@ document.getElementById("submit-btn").addEventListener("click", async (event) =>
             },
             dob,
             email,
-            last_donation_date: Date.now() // Set last_donation_date to the formatted dob
+            last_donation_date: formattedDob // Set last_donation_date to the formatted dob
         };
-
 
         // Make POST request to the API endpoint
         const response = await fetch("https://api.bluebeads.shivamkrthakur.in/v1/user/user-details", {
@@ -36,14 +37,18 @@ document.getElementById("submit-btn").addEventListener("click", async (event) =>
         });
 
         // Handle response
-        const responseData = await response.json();
-
-        if (responseData.statuscode===201) {
-            console.log(responseData);
-            window.location.href = "user-profile"; // Redirect to user profile page
+        if (response.ok) {
+            const responseData = await response.json();
+            console.log("Response Data:", responseData);
+            if (responseData.statuscode === 201) {
+                console.log("Data submitted successfully");
+                window.location.href = "user-profile"; // Redirect to user profile page
+            } else {
+                console.error("Failed to submit data");
+                // Handle error scenario
+            }
         } else {
-            console.error("Failed to submit data");
-            console.log(response);
+            console.error("Failed to submit data. Server returned status:", response.status);
             // Handle error scenario
         }
     } catch (error) {
