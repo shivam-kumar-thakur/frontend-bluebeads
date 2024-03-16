@@ -131,7 +131,18 @@ async function loadRequestData(responseData){
                 body:JSON.stringify({
                     requestId:responseData.data.details.requests[i]
                 })
-            })
+            });
+
+//             const response2 = await fetch("https://api.bluebeads.shivamkrthakur.in/v1/user/request-status", {
+//     method: "POST", // This should be changed to "GET" or "HEAD"
+//     headers: {
+//         "Content-Tpye": "application/json" // Typo: Should be "Content-Type"
+//     },
+//     body: JSON.stringify({
+//         requestId: responseData.data.details.requests[i]
+//     })
+// });
+
 
             const responseData2=await response2.json();
             const userDetails2 = responseData2.data.details;
