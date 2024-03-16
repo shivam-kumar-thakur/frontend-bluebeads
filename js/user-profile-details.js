@@ -18,9 +18,9 @@ document.getElementById("submit-btn").addEventListener("click", async (event) =>
             userName: name,
             bloodGroup,
             gender,
-            location: {
-                latitude: 51.5074, // Replace with actual latitude
-                longitude: -0.1278 // Replace with actual longitude
+            "location": {
+                "latitude": "51.5074",
+                "longitude": "-0.1278"
             },
             dob,
             email,
@@ -46,7 +46,7 @@ document.getElementById("submit-btn").addEventListener("click", async (event) =>
             console.error("Failed to submit data",responseData);
             // Handle error scenario
         }
-        
+
     } catch (error) {
         console.error("An error occurred:", error);
         // Handle error scenario
