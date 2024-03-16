@@ -124,7 +124,7 @@ async function loadRequestData(responseData){
         currentRequest.classList.add("card", "request-donation", "primiary-card-info");
         try{
             const response2=await fetch("https://api.bluebeads.shivamkrthakur.in/v1/user/request-status",{
-                method:"GET",
+                method:"POST",
                 headers:{
                     "Content-Tpye":"application/json"
                 },
