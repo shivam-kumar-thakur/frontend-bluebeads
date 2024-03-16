@@ -37,20 +37,16 @@ document.getElementById("submit-btn").addEventListener("click", async (event) =>
         });
 
         // Handle response
-        if (response.ok) {
-            const responseData = await response.json();
-            console.log("Response Data:", responseData);
-            if (responseData.statuscode === 201) {
-                console.log("Data submitted successfully");
-                window.location.href = "user-profile"; // Redirect to user profile page
-            } else {
-                console.error("Failed to submit data");
-                // Handle error scenario
-            }
+        const responseData = await response.json();
+        console.log("Response Data:", responseData);
+        if (responseData.statuscode === 201) {
+            console.log("Data submitted successfully");
+            window.location.href = "user-profile"; // Redirect to user profile page
         } else {
-            console.error("Failed to submit data. Server returned status:", response.status);
+            console.error("Failed to submit data",responseData);
             // Handle error scenario
         }
+        
     } catch (error) {
         console.error("An error occurred:", error);
         // Handle error scenario
