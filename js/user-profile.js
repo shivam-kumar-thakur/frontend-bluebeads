@@ -123,30 +123,31 @@ async function loadRequestData(responseData){
         const currentRequest=document.createElement("div");
         currentRequest.classList.add("card", "request-donation", "primiary-card-info");
         try{
-            // const response2=await fetch("https://api.bluebeads.shivamkrthakur.in/v1/user/request-status",{
-            //     method:"POST",
-            //     headers:{
-            //         "Content-Tpye":"application/json"
-            //     },
-            //     body:JSON.stringify({
-            //         requestId:responseData.data.details.requests[i]
-            //     })
-            // });
+            const response2=await fetch("https://api.bluebeads.shivamkrthakur.in/v1/user/request-status",{
+                method:"POST",
+                headers:{
+                    "Content-Tpye":"application/json"
+                },
+                body:JSON.stringify({
+                    requestId:responseData.data.details.requests[i]
+                })
+            });
 
-            const response2 = await fetch("https://api.bluebeads.shivamkrthakur.in/v1/user/request-status", {
-    method: "POST", // This should be changed to "GET" or "HEAD"
-    headers: {
-        "Content-Tpye": "application/json" // Typo: Should be "Content-Type"
-    },
-    body: JSON.stringify({
-        requestId: responseData.data.details.requests[i]
-    })
-});
+//             const response2 = await fetch("https://api.bluebeads.shivamkrthakur.in/v1/user/request-status", {
+//     method: "POST", // This should be changed to "GET" or "HEAD"
+//     headers: {
+//         "Content-Tpye": "application/json" // Typo: Should be "Content-Type"
+//     },
+//     body: JSON.stringify({
+//         requestId: responseData.data.details.requests[i]
+//     })
+// });
 
 
             const responseData2=await response2.json();
-            const userDetails2 = responseData2.data.details;
             console.log(responseData2);
+            const userDetails2 = responseData2.data.details;
+            console.log(userDetails2);
             // add all this things.
             currentRequest.innerHTML=`<p class="head-font">Current Request</p>
             <hr>
