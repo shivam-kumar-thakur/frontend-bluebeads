@@ -187,9 +187,7 @@ function loadPrimaryInfo(responseData) {
             <p class="head-font">Volunteer Experience</p>
             <hr>
             <p>Be a volunteer for the donation camp. Find nearby camps.</p>
-            <center>
                 <img class="public-welfare-images" src="images/find-for-volunteer.jpg" alt="No Data Found" height="200px" width="360px">
-            </center>
             <button class="button-1 btn-or" onclick="location.href = 'find_ngo.html';">Find</button>
         </div>`;
 
