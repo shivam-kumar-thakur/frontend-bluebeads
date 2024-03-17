@@ -4,7 +4,7 @@ document.getElementById("submit-btn").addEventListener("click", async (event) =>
 
         const name = document.getElementById("name").value;
         const bloodGroup = document.getElementById("blood").value;
-        const gender = document.querySelector('input[name="gender"]:checked').value;
+        const gender = document.getElementById("gender").value;
         const location = document.getElementById("location").value;
         const dob = document.getElementById("dob").value;
         const email = document.getElementById("email").value;
