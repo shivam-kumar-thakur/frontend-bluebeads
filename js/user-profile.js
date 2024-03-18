@@ -89,6 +89,8 @@ async function loadBasisInfo(){
                 <p><span class="head-font-2">LAST DONATION:</span> ${userDetails.lastdonation}</p>
             `;
             primaryDetailsOverall.innerHTML = userDetailsHTML;
+            console.log(userDetails.gender);
+            console.log(userDetails.gender==="female");
             if(userDetails.gender==="male"){
                 profile_photo.setAttribute("src","images/male.png");
             }
