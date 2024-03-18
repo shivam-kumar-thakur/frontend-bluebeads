@@ -75,8 +75,8 @@ async function loadBasisInfo(){
             //load data
             // Update user name
             const profile_photo=document.getElementById("profile_photo");
-            profile_photo.setAttribute("width","200px");
-            profile_photo.setAttribute("height","200px");
+            profile_photo.setAttribute("width","180px");
+            profile_photo.setAttribute("height","230px");
             document.getElementById("userName").innerText = responseData.data.details.userName;
 
             // Update primary details
