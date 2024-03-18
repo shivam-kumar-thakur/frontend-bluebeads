@@ -92,7 +92,7 @@ async function loadBasisInfo(){
             if(userDetails.gender==="male"){
                 profile_photo.setAttribute("src","images/male.png");
             }
-            else if(userDetails.gender==="male"){
+            else if(userDetails.gender==="female"){
                 profile_photo.setAttribute("src","images/female.jpg");
             }
             else{
