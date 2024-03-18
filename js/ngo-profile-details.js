@@ -14,7 +14,6 @@ const submitDetails=async ()=>{
         const address=document.getElementById("address").value;
 
         const data={
-            // address we are not using.
             ngo_name,
             ngo_description:description,
             "location": {
@@ -24,7 +23,7 @@ const submitDetails=async ()=>{
             ngo_head:head_name,
             head_phone:phno,
             head_email:email,
-            head_address,
+            head_address:address,
             head_dob:dob,
             head_gender:gender
         }
