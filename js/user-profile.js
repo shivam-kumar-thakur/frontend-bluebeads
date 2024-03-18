@@ -74,6 +74,7 @@ async function loadBasisInfo(){
 
             //load data
             // Update user name
+            const profile_photo=document.getElementById("profile_photo");
             document.getElementById("userName").innerText = responseData.data.details.userName;
 
             // Update primary details
@@ -88,7 +89,15 @@ async function loadBasisInfo(){
                 <p><span class="head-font-2">LAST DONATION:</span> ${userDetails.lastdonation}</p>
             `;
             primaryDetailsOverall.innerHTML = userDetailsHTML;
-
+            if(userDetails.gender==="male"){
+                profile_photo.setAttribute("src","images/male.png");
+            }
+            else if(userDetails.gender==="male"){
+                profile_photo.setAttribute("src","images/female.jpg");
+            }
+            else{
+                profile_photo.setAttribute("src","images/equality.png");
+            }
             // load other data
             await loadRequestData(responseData);
             await loadPrimaryInfo(responseData);
