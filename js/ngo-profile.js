@@ -72,6 +72,20 @@ async function loadbasicInfo(){
             <p><span class="head-font-2">NGO Head Gender:</span>${responseData.data.details.ngoHeadGender}</li>
             <p><span class="head-font-2">Location:</span>${responseData.data.details.location.state},${responseData.data.details.location.country},${responseData.data.details.location.postalCode}</li>`;
 
+
+            const profile_photo=document.getElementById("head-image");
+            profile_photo.setAttribute("width","180px");
+            profile_photo.setAttribute("height","230px");
+
+            if(responseData.data.details.ngoHeadGender==="male"){
+                profile_photo.setAttribute("src","images/male.png");
+            }
+            else if(responseData.data.details.ngoHeadGender==="female"){
+                profile_photo.setAttribute("src","images/female.jpg");
+            }
+            else{
+                profile_photo.setAttribute("src","images/equality.png");
+            }
             loadOverallData(responseData);
             loadStats(responseData);
         }
