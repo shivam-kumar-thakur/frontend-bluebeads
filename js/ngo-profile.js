@@ -90,7 +90,8 @@ async function loadbasicInfo(){
             loadStats(responseData);
         }
         else{
-            window.location.href="login.html";
+            console.log("bro");
+            // window.location.href="login.html";
         }
     }
     catch(error){
