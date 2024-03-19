@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
             console.log("Response Data:", responseData);
             if (responseData.statuscode === 201) {
                 console.log("Data submitted successfully");
-                window.location.href = "user-profile.html"; // Redirect to user profile page
+                window.location.href = "ngo-profile.html"; // Redirect to user profile page
             } else {
                 console.error("Failed to submit data", responseData);
                 // Handle error scenario
