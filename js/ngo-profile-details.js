@@ -39,7 +39,9 @@ const submitDetails=async ()=>{
 
             if(response.ok){
                 const responseData=await response.json();
-                console.log(responseData);
+                if(responseData.statuscode===201){
+                    window.location.href="ngo-profile.html";
+                }
             }
             else{
                 console.log("something is not correct : ",response);
