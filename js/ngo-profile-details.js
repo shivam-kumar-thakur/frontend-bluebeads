@@ -40,6 +40,8 @@ const submitDetails=async ()=>{
             if (response.ok) {
                 try {
                     const responseData = await response.json();
+                    console.log(responseData);
+                    console.log(responseData.statuscode);
                     if (responseData.statuscode === 201) {
                         window.location.href = "ngo-profile.html";
                     } else {
