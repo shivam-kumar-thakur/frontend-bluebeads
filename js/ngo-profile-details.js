@@ -37,19 +37,23 @@ const submitDetails=async ()=>{
                 body:JSON.stringify(data)
             })
 
-            if(response.ok){
-                const responseData=await response.json();
-                if(responseData.statuscode === 201 ){
-                    window.location.href="ngo-profile.html";
+            if (response.ok) {
+                try {
+                    const responseData = await response.json();
+                    if (responseData.statuscode === 201) {
+                        window.location.href = "ngo-profile.html";
+                    } else {
+                        console.error("Unexpected status code:", responseData.statuscode);
+                        // Handle unexpected status code
+                    }
+                } catch (error) {
+                    console.error("Error parsing JSON:", error);
+                    // Handle JSON parsing error
                 }
+            } else {
+                console.error("Failed to fetch:", response.status);
+                // Handle HTTP error
             }
-            else{
-                console.log("something is not correct : ",response);
-            }
-        }
-        catch(error){
-            console.log("something went wrong : ",error.message);
-        }
 
     })
 };
