@@ -127,19 +127,17 @@ async function loadCampsInfo(responseData){
             });
             if(camp_data_fetch.ok){
                 const responseData=await camp_data_fetch.json();
-                console.log(responseData)
-                const camp_data=`<div class="card request-donation">
-            <p class="head-font">Adityasinh Rana</p>
-            <p><span class="head-font-3">Blood Group:</span> B+</p>
-            <p><span class="head-font-3">Gender:</span> Male</p>
-            <p><span class="head-font-3">Date of Birth:</span> 26-02-2004</p>
-            <p><span class="head-font-3">Contact Number:</span> 9876543210</p>
+                const camp_data_put=`<div class="card request-donation">
+            <p class="head-font">${responseData.campDetails.campName}</p>
+            <p>${responseData.campDetails.campDescription}</p>
+            <p><span class="head-font-3">Volunteer Registerd :</span>${responseData.campDetails.volunteersRegister.length}</p>
             <div class="visit-btn">
                 <div class="select-btn-card">
                     <button class="button-1 btn-whi-select" id="${campId}">show</button>
                 </div>
             </div>
         </div>`
+        camp_data.appendChild(camp_data_put);
             }
         }
     }
