@@ -42,7 +42,51 @@
  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,1,0" />
-
+<style>
+    .donation-left {
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+align-content: center;
+justify-content: flex-start;
+margin: 10px;
+padding: 10px;
+align-items: center;
+}
+.request-donation {
+word-break: break-word;
+display: flex;
+flex-direction: column;
+justify-content: space-around;
+flex-wrap: wrap;
+align-content: center;
+/* text-align: -webkit-auto; */
+/* align-items: flex-start; */
+margin: 10px;
+/* height: 200px; */
+}
+.request-donation {
+    word-break: break-word;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    /* align-items: center; */
+    flex-wrap: nowrap;
+    align-content: space-around;
+    align-items: flex-start;
+}
+.request-donation > * {
+    margin: 5px;
+}
+.visit-btn{
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    align-items: center;
+    align-content: space-around;
+}
+</style>
 </head>
 <body>
     <nav>
@@ -149,6 +193,47 @@
                 </div>
 
             </div>
+            <hr>
+            <p class="hello">Current Camps</p>
+            <div class="donation-left" id="registered-users">
+                <div class="card request-donation" id="dummy-test">
+                    <p class="head-font">No Camps Details found</p>
+                    <p><span class="head-font-3">Start your first camp and help the humanity.</span> B+</p>
+                    <div class="visit-btn">
+                        <div class="select-btn-card">
+                            <button class="button-1 btn-whi-select" id="dummy-done" onclick="location.href='new-camp.html'">Start</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card request-donation" id="dummy-test">
+                    <p class="head-font">Adityasinh Rana</p>
+                    <p><span class="head-font-3">Blood Group:</span> B+</p>
+                    <p><span class="head-font-3">Gender:</span> Male</p>
+                    <p><span class="head-font-3">Date of Birth:</span> 26-02-2004</p>
+                    <p><span class="head-font-3">Contact Number:</span> 9876543210</p>
+                    <div class="visit-btn">
+                        <div class="select-btn-card">
+                            <button class="button-1 btn-whi-select" id="dummy-done">show</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card request-donation">
+                    <p class="head-font">Aarav Patel</p>
+                    <p><span class="head-font-3">Blood Group:</span> B+</p>
+                    <p><span class="head-font-3">Gender:</span> Male</p>
+                    <p><span class="head-font-3">Date of Birth:</span> 26-10-2004</p>
+                    <p><span class="head-font-3">Contact Number:</span> 8765432109</p>
+                    <div class="visit-btn">
+                        <div class="select-btn-card">
+                            <button class="button-1 btn-whi-select" id="dummy-done">show</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
             <hr>
             <p class="hello">Overall Collection</p>
             <p style="margin: 20px 0;">
