@@ -101,6 +101,7 @@ async function loadbasicInfo(){
 }
 
 async function loadCampsInfo(responseData){
+    console.log(responseData);
     responseData.data.details.camps.forEach(campId => {
         console.log(campId);
     });
