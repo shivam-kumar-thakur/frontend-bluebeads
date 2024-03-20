@@ -118,8 +118,8 @@ async function loadCampsInfo(responseData){
         for(const campId of responseData.data.details.camps){
             const camp_data_fetch=await fetch("https://api.bluebeads.shivamkrthakur.in/v1/camp/camp-admin",{
                 method:"POST",
-                headers:{
-                    "Content-Types":"application/json"
+                headers: {
+                    "Content-Type": "application/json"
                 },
                 body:JSON.stringify({
                     campId:campId
