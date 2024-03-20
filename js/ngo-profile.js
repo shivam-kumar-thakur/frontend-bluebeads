@@ -101,10 +101,48 @@ async function loadbasicInfo(){
 }
 
 async function loadCampsInfo(responseData){
-    console.log(responseData);
-    responseData.data.details.camps.forEach(campId => {
-        console.log(campId);
-    });
+    const camp_data=document.getElementById("camps-data");
+    if(responseData.data.details.camps.length===0){
+        const no_data=`<div class="card request-donation" id="no-data-camp">
+        <p class="head-font">No Camps Details found</p>
+        <p><span class="head-font-3">Start your first camp and help the humanity.</span> B+</p>
+        <div class="visit-btn">
+            <div class="select-btn-card">
+                <button class="button-1 btn-whi-select" id="dummy-done" onclick="location.href='new-camp.html'">Start</button>
+            </div>
+        </div>
+    </div>`;
+    camp_data.appendChild(no_data);
+    }
+    else{
+        for(const campId of responseData.data.details.camps){
+            const camp_data_fetch=await fetch("https://api.bluebeads.shivamkrthakur.in/v1/camp/camp-admin",{
+                method:"POST",
+                headers:{
+                    "Content-Types":"application/json"
+                },
+                body:JSON.stringify({
+                    campId:campId
+                })
+            });
+            if(camp_data_fetch.ok){
+                const responseData=await camp_data_fetch.json();
+                console.log(responseData)
+                const camp_data=`<div class="card request-donation">
+            <p class="head-font">Adityasinh Rana</p>
+            <p><span class="head-font-3">Blood Group:</span> B+</p>
+            <p><span class="head-font-3">Gender:</span> Male</p>
+            <p><span class="head-font-3">Date of Birth:</span> 26-02-2004</p>
+            <p><span class="head-font-3">Contact Number:</span> 9876543210</p>
+            <div class="visit-btn">
+                <div class="select-btn-card">
+                    <button class="button-1 btn-whi-select" id="${campId}">show</button>
+                </div>
+            </div>
+        </div>`
+            }
+        }
+    }
 }
 
 function loadOverallData(responseData){
