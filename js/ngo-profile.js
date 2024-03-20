@@ -101,7 +101,7 @@ async function loadbasicInfo(){
 }
 
 async function loadCampsInfo(responseData){
-    for(const camp in responseData.data.details.camps){
+    for(const camp of responseData.data.details.camps){
         console.log(camp);
     }
 }
