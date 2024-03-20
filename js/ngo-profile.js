@@ -86,6 +86,7 @@ async function loadbasicInfo(){
             else{
                 profile_photo.setAttribute("src","images/equality.png");
             }
+            loadCampsInfo(responseData);
             loadOverallData(responseData);
             loadStats(responseData);
         }
@@ -96,6 +97,12 @@ async function loadbasicInfo(){
     }
     catch(error){
         console.error("Error : ",error.message);
+    }
+}
+
+async function loadCampsInfo(responseData){
+    for(const camp in responseData.data.details.camps){
+        console.log(camp);
     }
 }
 
