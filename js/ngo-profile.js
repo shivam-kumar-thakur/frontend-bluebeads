@@ -135,10 +135,10 @@ async function loadCampsInfo(responseData){
                 div_create.innerHTML=`
             <p class="head-font">${responseData.campDetails.campName}</p>
             <p>${responseData.campDetails.campDescription}</p>
-            <p><span class="head-font-3">Volunteer Registerd :</span>${responseData.campDetails.volunteersRegister.length}</p>
+            <p><span class="head-font-3">Volunteer Registerd : </span>${responseData.campDetails.volunteersRegister.length}</p>
             <div class="visit-btn">
                 <div class="select-btn-card">
-                    <button class="button-1 btn-whi-select" id="${campId}">show</button>
+                    <button class="button-1 btn-whi-select" id="${campId}" onclick="camp_page_call(this.id)">show</button>
                 </div>
             </div>
         `
@@ -219,4 +219,10 @@ function loadStats(responseData) {
 function getRandomColor() {
     // return "#" + Math.floor(Math.random() * 16777215).toString(16);
     return "#940686";
+}
+
+
+function camp_page_call(camp_id){
+    var url=`https://api.bluebeads.shivamkrthakur.in/camp-admin:`+`camp_id`;
+    window.location.href=url;
 }
