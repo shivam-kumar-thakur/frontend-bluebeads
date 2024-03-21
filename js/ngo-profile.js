@@ -103,7 +103,10 @@ async function loadbasicInfo(){
 async function loadCampsInfo(responseData){
     const camp_data=document.getElementById("camps-data");
     if(responseData.data.details.camps.length===0){
-        const no_data=`<div class="card request-donation" id="no-data-camp">
+        const div_create=document.createElement("div");
+        div_create.classList.add("card","request-donation");
+        div_create.setAttribute("id","no-data-camp");
+        div_create.innerHTML=`
         <p class="head-font">No Camps Details found</p>
         <p><span class="head-font-3">Start your first camp and help the humanity.</span> B+</p>
         <div class="visit-btn">
@@ -111,8 +114,8 @@ async function loadCampsInfo(responseData){
                 <button class="button-1 btn-whi-select" id="dummy-done" onclick="location.href='new-camp.html'">Start</button>
             </div>
         </div>
-    </div>`;
-    camp_data.appendChild(no_data);
+    `;
+    camp_data.appendChild(div_create);
     }
     else{
         for(const campId of responseData.data.details.camps){
@@ -127,7 +130,9 @@ async function loadCampsInfo(responseData){
             });
             if(camp_data_fetch.ok){
                 const responseData=await camp_data_fetch.json();
-                const camp_data_put=`<div class="card request-donation">
+                const div_create=document.createElement("div");
+                div_create.classList.add("card","request-donation");
+                div_create.innerHTML=`
             <p class="head-font">${responseData.campDetails.campName}</p>
             <p>${responseData.campDetails.campDescription}</p>
             <p><span class="head-font-3">Volunteer Registerd :</span>${responseData.campDetails.volunteersRegister.length}</p>
@@ -136,8 +141,8 @@ async function loadCampsInfo(responseData){
                     <button class="button-1 btn-whi-select" id="${campId}">show</button>
                 </div>
             </div>
-        </div>`
-        camp_data.appendChild(camp_data_put);
+        `
+        camp_data.appendChild(div_create);
             }
         }
     }
