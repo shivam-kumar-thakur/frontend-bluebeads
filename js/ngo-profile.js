@@ -221,8 +221,8 @@ function getRandomColor() {
     return "#940686";
 }
 
-
+//https://api.bluebeads.shivamkrthakur.in/camp-profile.html?camp_id=605bb82dc91f3cbeab773d4
 function camp_page_call(camp_id){
-    var url=`https://api.bluebeads.shivamkrthakur.in/camp-admin/${camp_id};
+    var url=`camp-profile.html?camp_id=${camp_id}`;
     window.location.href=url;
 }

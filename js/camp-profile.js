@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded",async ()=>{
     //campId nikalo aur send karo
+    
     loadInfo(camp_id);
     loadRegisterVolunteerDetails(camp_id);
     loadDonatedUsersDetails(camp_id);
