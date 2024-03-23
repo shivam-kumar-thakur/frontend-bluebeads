@@ -223,6 +223,6 @@ function getRandomColor() {
 
 
 function camp_page_call(camp_id){
-    var url=`https://api.bluebeads.shivamkrthakur.in/camp-admin:`+`camp_id`;
+    var url=`https://api.bluebeads.shivamkrthakur.in/camp-admin/${camp_id};
     window.location.href=url;
 }
